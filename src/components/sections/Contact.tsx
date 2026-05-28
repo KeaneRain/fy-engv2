@@ -16,7 +16,7 @@ export function Contact() {
 
   return (
     <section id="contact" ref={ref}>
-      <div className="bg-navy-950 border-t border-navy-800 py-16 px-8 md:px-12">
+      <div className="bg-navy-950/40 border-t border-navy-800 py-16 px-8 md:px-12">
         <div className="grid grid-cols-1 gap-10">
           <div>
             <motion.h3
@@ -65,7 +65,7 @@ export function Contact() {
         </div>
       </div>
 
-      <footer className="bg-navy-950 border-t border-navy-800 py-5 px-8 md:px-12">
+      <footer className="bg-navy-950/40 border-t border-navy-800 py-5 px-8 md:px-12">
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div className="flex items-center gap-3">
             <div className="w-7 h-7 border border-blueprint-600 flex items-center justify-center">
