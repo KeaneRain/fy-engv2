@@ -10,7 +10,7 @@ interface ButtonProps {
 }
 
 export function Button({ children, variant = 'primary', onClick, href, className = '', type = 'button' }: ButtonProps) {
-  const base = 'inline-flex items-center justify-center px-6 py-3 text-xs font-semibold tracking-widest uppercase transition-all duration-200 font-body'
+  const base = 'inline-flex items-center justify-center px-6 py-3 text-xs font-semibold tracking-widest uppercase transition-all duration-200 font-body focus:outline-none focus:ring-2 focus:ring-blueprint-300 focus:ring-offset-2 focus:ring-offset-navy-950'
   const variants: Record<string, string> = {
     primary: 'bg-blueprint-600 text-white hover:bg-blueprint-700 border border-blueprint-600',
     outline: 'bg-transparent text-white border border-white hover:bg-white hover:text-navy-950',
