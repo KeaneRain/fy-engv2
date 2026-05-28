@@ -19,13 +19,13 @@ export function Contact() {
       <div className="bg-navy-950 border-t border-navy-800 py-16 px-8 md:px-12">
         <div className="grid grid-cols-1 gap-10">
           <div>
-            <motion.h2
+            <motion.h3
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               className="text-3xl font-heading text-white uppercase mb-6 leading-tight"
             >
               Let's Build Something<br />Great Together.
-            </motion.h2>
+            </motion.h3>
             <motion.div
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
@@ -55,11 +55,11 @@ export function Contact() {
             className="space-y-3"
           >
             <div className="grid grid-cols-2 gap-3">
-              <input type="text" placeholder="Name" className={inputClass} />
-              <input type="email" placeholder="Email" className={inputClass} />
+              <input type="text" placeholder="Name" aria-label="Name" className={inputClass} />
+              <input type="email" placeholder="Email" aria-label="Email" className={inputClass} />
             </div>
-            <input type="tel" placeholder="Phone" className={inputClass} />
-            <textarea placeholder="Message" rows={4} className={`${inputClass} resize-none`} />
+            <input type="tel" placeholder="Phone" aria-label="Phone" className={inputClass} />
+            <textarea placeholder="Message" aria-label="Message" rows={4} className={`${inputClass} resize-none`} />
             <Button type="submit" className="w-full">Send Message</Button>
           </motion.form>
         </div>
