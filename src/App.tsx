@@ -1,6 +1,5 @@
 import { SmoothScroll } from './components/SmoothScroll'
 import { SkylineCanvas } from './components/SkylineCanvas'
-import { ScrollProgress } from './components/ScrollProgress'
 import { Nav } from './components/ui/Nav'
 import { Hero } from './components/sections/Hero'
 import { Services } from './components/sections/Services'
@@ -13,7 +12,11 @@ export default function App() {
     <SmoothScroll>
       <div className="bg-navy-950 min-h-screen">
         <Nav />
-        <ScrollProgress />
+
+        {/* Mobile: buildings as fixed background layer */}
+        <div className="md:hidden fixed inset-0 opacity-[0.15] z-0 pointer-events-none">
+          <SkylineCanvas />
+        </div>
 
         <div className="flex">
           {/* Left: scrollable content (full width on mobile, half on desktop) */}
@@ -25,8 +28,8 @@ export default function App() {
             <Contact />
           </main>
 
-          {/* Right: sticky skyline (hidden on mobile) */}
-          <div className="hidden md:block md:w-1/2 relative">
+          {/* Desktop right panel: sticky skyline */}
+          <div className="hidden md:block md:w-1/2">
             <SkylineCanvas />
           </div>
         </div>
