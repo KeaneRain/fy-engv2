@@ -46,10 +46,11 @@ describe('ANNOTATIONS', () => {
   it('has 2 annotations', () => {
     expect(ANNOTATIONS.length).toBe(2)
   })
-  it('all drawRanges are within [0, 1]', () => {
+  it('all drawRanges are valid [0, 1] and start < end', () => {
     ANNOTATIONS.forEach(a => {
       expect(a.drawRange[0]).toBeGreaterThanOrEqual(0)
       expect(a.drawRange[1]).toBeLessThanOrEqual(1)
+      expect(a.drawRange[0]).toBeLessThan(a.drawRange[1])
     })
   })
 })

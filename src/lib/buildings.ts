@@ -1,4 +1,4 @@
-interface BuildingConfig {
+export interface BuildingConfig {
   x: number
   width: number
   groundY: number
@@ -123,8 +123,8 @@ export const BUILDINGS: BuildingData[] = [
     id: 'b6',
     path: generateBuildingPath({ x: 432, width: 86, groundY: 580, height: 318, floors: 11, windowCols: 3, variant: 'parapet' })
       + ` M ${432 + 43},${580 - 318} L ${432 + 43},${580 - 318 - 58}`
-      + ` M ${432 + 43},${580 - 318 - 58} L ${432 + 43 + 72},${580 - 318 - 58}`
-      + ` M ${432 + 43 + 72},${580 - 318 - 58} L ${432 + 43 + 72},${580 - 318 - 44}`
+      + ` M ${432 + 43},${580 - 318 - 58} L ${432 + 43 + 43},${580 - 318 - 58}`
+      + ` M ${432 + 43 + 43},${580 - 318 - 58} L ${432 + 43 + 43},${580 - 318 - 44}`
       + ` M ${432 + 43},${580 - 318 - 50} L ${432 + 43 - 16},${580 - 318 - 40}`,
     drawRange: [0.55, 0.71],
     strokeColor: '#93c5fd',
@@ -162,6 +162,6 @@ export const ANNOTATIONS: AnnotationData[] = [
     label: '458m',
     labelX: 742,
     labelY: 360,
-    drawRange: [0.93, 0.99],
+    drawRange: [0.93, 1.0],
   },
 ]

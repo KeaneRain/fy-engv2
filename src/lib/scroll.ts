@@ -8,5 +8,6 @@ export function clamp(value: number, min: number, max: number): number {
 
 export function getBuildingProgress(scrollProgress: number, drawRange: [number, number]): number {
   const [start, end] = drawRange
+  if (start >= end) return scrollProgress >= end ? 1 : 0
   return clamp(mapRange(scrollProgress, start, end, 0, 1), 0, 1)
 }
