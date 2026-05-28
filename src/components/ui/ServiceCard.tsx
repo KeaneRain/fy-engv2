@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react'
+
 type IconType = 'building' | 'clipboard' | 'ruler'
 
 interface ServiceCardProps {
@@ -6,7 +8,7 @@ interface ServiceCardProps {
   description: string
 }
 
-const ICONS: Record<IconType, JSX.Element> = {
+const ICONS: Record<IconType, ReactElement> = {
   building: (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <rect x="4" y="8" width="24" height="20" />
