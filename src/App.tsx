@@ -14,8 +14,8 @@ export default function App() {
         <Nav />
 
         {/* Mobile: buildings as fixed background layer */}
-        <div className="md:hidden fixed inset-0 opacity-[0.15] z-0 pointer-events-none">
-          <SkylineCanvas />
+        <div className="md:hidden fixed inset-0 opacity-[0.45] z-0 pointer-events-none overflow-hidden">
+          <SkylineCanvas preserveAspectRatio="xMidYMax slice" />
         </div>
 
         <div className="flex">

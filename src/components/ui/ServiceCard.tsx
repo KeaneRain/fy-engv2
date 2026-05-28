@@ -42,7 +42,7 @@ const ICONS: Record<IconType, ReactElement> = {
 export function ServiceCard({ icon, title, description }: ServiceCardProps) {
   return (
     <div className="
-      relative p-6 bg-navy-800
+      relative p-6 bg-navy-800/50 backdrop-blur-sm
       before:absolute before:top-2 before:left-2 before:w-5 before:h-5
       before:border-t-2 before:border-l-2 before:border-blueprint-600
       after:absolute after:top-2 after:right-2 after:w-5 after:h-5

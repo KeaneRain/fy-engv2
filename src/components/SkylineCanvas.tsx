@@ -5,7 +5,11 @@ import { BUILDINGS, ANNOTATIONS } from '../lib/buildings'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function SkylineCanvas() {
+interface SkylineCanvasProps {
+  preserveAspectRatio?: string
+}
+
+export function SkylineCanvas({ preserveAspectRatio = 'xMidYMax meet' }: SkylineCanvasProps) {
   const buildingRefs = useRef<Map<string, SVGPathElement>>(new Map())
   const annotationRefs = useRef<Map<string, SVGPathElement>>(new Map())
   const annotationTextRefs = useRef<Map<string, SVGTextElement>>(new Map())
@@ -76,7 +80,7 @@ export function SkylineCanvas() {
         viewBox="0 0 800 600"
         className="w-full h-full"
         aria-hidden="true"
-        preserveAspectRatio="xMidYMax meet"
+        preserveAspectRatio={preserveAspectRatio}
         style={{ filter: 'drop-shadow(0 0 8px rgba(37,99,235,0.3))' }}
       >
         {BUILDINGS.map(building => (

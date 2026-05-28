@@ -7,7 +7,7 @@ interface ProjectCardProps {
 export function ProjectCard({ title, category, image }: ProjectCardProps) {
   return (
     <div className="group">
-      <div className="relative aspect-[4/3] bg-navy-800 overflow-hidden">
+      <div className="relative aspect-[4/3] bg-navy-800/50 backdrop-blur-sm overflow-hidden">
         <img
           src={image}
           alt={title}
