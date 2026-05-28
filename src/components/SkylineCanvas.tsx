@@ -3,6 +3,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { BUILDINGS, ANNOTATIONS } from '../lib/buildings'
 
+gsap.registerPlugin(ScrollTrigger)
+
 export function SkylineCanvas() {
   const buildingRefs = useRef<Map<string, SVGPathElement>>(new Map())
   const annotationRefs = useRef<Map<string, SVGPathElement>>(new Map())

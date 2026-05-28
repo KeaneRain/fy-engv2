@@ -17,6 +17,7 @@ export function ScrollProgress() {
       setProgress(maxScroll > 0 ? scrollTop / maxScroll : 0)
     }
     window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
