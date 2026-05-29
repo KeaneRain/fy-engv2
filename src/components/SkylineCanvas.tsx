@@ -76,7 +76,7 @@ export function SkylineCanvas({ preserveAspectRatio = 'xMidYMax meet' }: Skyline
   }, [])
 
   return (
-    <div className="sticky top-0 h-screen w-full flex items-end">
+    <div className="h-screen w-full flex items-end">
       <svg
         viewBox="0 0 800 600"
         className="w-full h-full"

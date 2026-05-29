@@ -44,7 +44,7 @@ export default function App() {
           <SkylineCanvas />
         </div>
 
-        {/* Radial vignette — clears center, reveals buildings at edges */}
+        {/* Radial vignette — dark center keeps text readable, buildings visible at edges */}
         <div
           className="fixed inset-0 z-[1] pointer-events-none"
           style={{
