@@ -36,7 +36,8 @@ export function SkylineCanvas({ preserveAspectRatio = 'xMidYMax meet' }: Skyline
       const path = buildingRefs.current.get(building.id)
       if (!path) return
       const length = path.getTotalLength()
-      gsap.set(path, { strokeDasharray: length, strokeDashoffset: length })
+      const initialOffset = building.drawDirection === 'reverse' ? -length : length
+      gsap.set(path, { strokeDasharray: length, strokeDashoffset: initialOffset })
       tl.to(
         path,
         { strokeDashoffset: 0, ease: 'none', duration: building.drawRange[1] - building.drawRange[0] },
