@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SmoothScroll } from './components/SmoothScroll'
 import { SkylineCanvas } from './components/SkylineCanvas'
 import { Nav } from './components/ui/Nav'
@@ -9,8 +8,6 @@ import { Services } from './components/sections/Services'
 import { Projects } from './components/sections/Projects'
 import { About } from './components/sections/About'
 import { Contact } from './components/sections/Contact'
-
-gsap.registerPlugin(ScrollTrigger)
 
 export default function App() {
   const canvasWrapperRef = useRef<HTMLDivElement>(null)
