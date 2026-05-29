@@ -4,7 +4,7 @@ import { Button } from '../ui/Button'
 export function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 pb-12 px-8 md:px-12">
-      <div className="max-w-lg">
+      <div className="max-w-2xl mx-auto w-full text-center">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.1 }}
-          className="flex gap-4 flex-wrap"
+          className="flex gap-4 flex-wrap justify-center"
         >
           <Button href="#contact">Get a Quote</Button>
           <Button href="#projects" variant="outline">View Projects</Button>
