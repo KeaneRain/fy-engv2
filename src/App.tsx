@@ -1,3 +1,6 @@
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SmoothScroll } from './components/SmoothScroll'
 import { SkylineCanvas } from './components/SkylineCanvas'
 import { Nav } from './components/ui/Nav'
@@ -7,32 +10,63 @@ import { Projects } from './components/sections/Projects'
 import { About } from './components/sections/About'
 import { Contact } from './components/sections/Contact'
 
+gsap.registerPlugin(ScrollTrigger)
+
 export default function App() {
+  const canvasWrapperRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = canvasWrapperRef.current
+    if (!el) return
+
+    const tween = gsap.to(el, {
+      scale: 1.2,
+      ease: 'none',
+      scrollTrigger: {
+        start: 0,
+        end: 'max',
+        scrub: 0.8,
+      },
+    })
+
+    return () => {
+      tween.scrollTrigger?.kill()
+      tween.kill()
+    }
+  }, [])
+
   return (
     <SmoothScroll>
       <div className="bg-navy-950 min-h-screen">
-        <Nav />
-
-        {/* Mobile: buildings as fixed background layer */}
-        <div className="md:hidden fixed inset-0 opacity-[0.65] z-0 pointer-events-none overflow-hidden">
+        {/* Fixed skyline canvas — full viewport background */}
+        <div
+          ref={canvasWrapperRef}
+          className="fixed inset-0 z-0 pointer-events-none"
+          style={{ transformOrigin: 'center bottom' }}
+        >
           <SkylineCanvas />
         </div>
 
-        <div className="flex">
-          {/* Left: scrollable content (full width on mobile, half on desktop) */}
-          <main className="w-full md:w-1/2 relative z-10">
-            <Hero />
-            <Services />
-            <Projects />
-            <About />
-            <Contact />
-          </main>
+        {/* Radial vignette — clears center, reveals buildings at edges */}
+        <div
+          className="fixed inset-0 z-[1] pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(ellipse 55% 100% at 50% 80%, #0a1628 35%, transparent 100%)',
+          }}
+        />
 
-          {/* Desktop right panel: sticky skyline */}
-          <div className="hidden md:block md:w-1/2">
-            <SkylineCanvas />
-          </div>
-        </div>
+        {/* Nav sits above canvas and content */}
+        <Nav />
+
+        {/* Centered content column */}
+        <main className="relative z-10 w-full">
+          <Hero />
+          <Services />
+          <Projects />
+          <About />
+          <Contact />
+        </main>
       </div>
     </SmoothScroll>
   )
