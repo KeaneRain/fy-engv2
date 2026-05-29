@@ -64,6 +64,7 @@ export interface BuildingData {
   drawRange: [number, number]
   strokeColor: string
   strokeWidth: number
+  drawDirection: 'forward' | 'reverse'
 }
 
 export interface AnnotationData {
@@ -83,6 +84,7 @@ export const BUILDINGS: BuildingData[] = [
     drawRange: [0, 0.07],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
+    drawDirection: 'forward',
   },
   {
     id: 'b1',
@@ -90,6 +92,7 @@ export const BUILDINGS: BuildingData[] = [
     drawRange: [0.07, 0.22],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
+    drawDirection: 'forward',
   },
   {
     id: 'b2',
@@ -97,6 +100,7 @@ export const BUILDINGS: BuildingData[] = [
     drawRange: [0.14, 0.30],
     strokeColor: '#93c5fd',
     strokeWidth: 1.5,
+    drawDirection: 'reverse',
   },
   {
     id: 'b3',
@@ -104,6 +108,7 @@ export const BUILDINGS: BuildingData[] = [
     drawRange: [0.27, 0.43],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
+    drawDirection: 'forward',
   },
   {
     id: 'b4',
@@ -111,6 +116,7 @@ export const BUILDINGS: BuildingData[] = [
     drawRange: [0.36, 0.52],
     strokeColor: '#93c5fd',
     strokeWidth: 1.5,
+    drawDirection: 'reverse',
   },
   {
     id: 'b5',
@@ -118,6 +124,7 @@ export const BUILDINGS: BuildingData[] = [
     drawRange: [0.48, 0.63],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
+    drawDirection: 'forward',
   },
   {
     id: 'b6',
@@ -129,6 +136,7 @@ export const BUILDINGS: BuildingData[] = [
     drawRange: [0.55, 0.71],
     strokeColor: '#93c5fd',
     strokeWidth: 1.5,
+    drawDirection: 'reverse',
   },
   {
     id: 'b7',
@@ -136,6 +144,7 @@ export const BUILDINGS: BuildingData[] = [
     drawRange: [0.68, 0.83],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
+    drawDirection: 'forward',
   },
   {
     id: 'b8',
@@ -144,6 +153,7 @@ export const BUILDINGS: BuildingData[] = [
     drawRange: [0.75, 0.92],
     strokeColor: '#93c5fd',
     strokeWidth: 1.5,
+    drawDirection: 'reverse',
   },
 ]
 

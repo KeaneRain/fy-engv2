@@ -40,6 +40,19 @@ describe('BUILDINGS', () => {
       expect(b.path.length).toBeGreaterThan(0)
     })
   })
+  it('all entries have a drawDirection of forward or reverse', () => {
+    BUILDINGS.forEach(b => {
+      expect(['forward', 'reverse']).toContain(b.drawDirection)
+    })
+  })
+  it('directions alternate across buildings for visual variety', () => {
+    // Skip ground line (index 0), check buildings alternate
+    const dirs = BUILDINGS.slice(1).map(b => b.drawDirection)
+    const hasForward = dirs.includes('forward')
+    const hasReverse = dirs.includes('reverse')
+    expect(hasForward).toBe(true)
+    expect(hasReverse).toBe(true)
+  })
 })
 
 describe('ANNOTATIONS', () => {
