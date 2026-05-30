@@ -20,8 +20,8 @@ describe('generateBuildingPath', () => {
 })
 
 describe('BUILDINGS', () => {
-  it('has 9 entries (ground + 8 buildings)', () => {
-    expect(BUILDINGS.length).toBe(9)
+  it('has 11 entries (ground + 5 left + 5 right buildings)', () => {
+    expect(BUILDINGS.length).toBe(11)
   })
   it('all ids are unique', () => {
     const ids = BUILDINGS.map(b => b.id)
