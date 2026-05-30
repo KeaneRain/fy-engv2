@@ -77,9 +77,8 @@ export interface AnnotationData {
 }
 
 // All buildings share viewBox "0 0 800 600", groundY = 580
-// Left cluster (l1–l5): x=12–386, grows taller toward center
-// Right cluster (r5–r1): x=414–788, mirror positions, slightly different heights/variants
-// Each pair (l1&r1, l2&r2 ...) shares the same drawRange so both sides draw simultaneously
+// 4 buildings per side with wide spacing — each pair draws simultaneously (same drawRange)
+// Left (l1–l4): x=5→387, taller toward center | Right (r4–r1): x=413→795, mirror
 export const BUILDINGS: BuildingData[] = [
   {
     id: 'ground',
@@ -90,85 +89,69 @@ export const BUILDINGS: BuildingData[] = [
     drawDirection: 'forward',
   },
 
-  // — Left cluster —
+  // — Left cluster — grows taller toward center, wide gaps between buildings
   {
     id: 'l1',
-    path: generateBuildingPath({ x: 12, width: 52, groundY: 580, height: 82, floors: 3, windowCols: 2, variant: 'simple' }),
-    drawRange: [0.07, 0.22],
+    path: generateBuildingPath({ x: 5, width: 62, groundY: 580, height: 95, floors: 3, windowCols: 2, variant: 'simple' }),
+    drawRange: [0.07, 0.24],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
     drawDirection: 'forward',
   },
   {
     id: 'l2',
-    path: generateBuildingPath({ x: 78, width: 58, groundY: 580, height: 118, floors: 4, windowCols: 2, variant: 'parapet' }),
-    drawRange: [0.18, 0.34],
+    path: generateBuildingPath({ x: 105, width: 70, groundY: 580, height: 155, floors: 5, windowCols: 2, variant: 'parapet' }),
+    drawRange: [0.20, 0.38],
     strokeColor: '#93c5fd',
     strokeWidth: 1.5,
     drawDirection: 'reverse',
   },
   {
     id: 'l3',
-    path: generateBuildingPath({ x: 150, width: 68, groundY: 580, height: 168, floors: 6, windowCols: 3, variant: 'simple' }),
-    drawRange: [0.30, 0.46],
+    path: generateBuildingPath({ x: 220, width: 78, groundY: 580, height: 225, floors: 7, windowCols: 3, variant: 'simple' }),
+    drawRange: [0.34, 0.54],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
     drawDirection: 'forward',
   },
   {
     id: 'l4',
-    path: generateBuildingPath({ x: 232, width: 62, groundY: 580, height: 212, floors: 7, windowCols: 2, variant: 'parapet' }),
-    drawRange: [0.42, 0.58],
+    path: generateBuildingPath({ x: 315, width: 72, groundY: 580, height: 288, floors: 10, windowCols: 3, variant: 'tapered' }),
+    drawRange: [0.50, 0.72],
     strokeColor: '#93c5fd',
     strokeWidth: 1.5,
     drawDirection: 'reverse',
-  },
-  {
-    id: 'l5',
-    path: generateBuildingPath({ x: 308, width: 78, groundY: 580, height: 278, floors: 10, windowCols: 3, variant: 'tapered' }),
-    drawRange: [0.54, 0.73],
-    strokeColor: '#2563eb',
-    strokeWidth: 1.5,
-    drawDirection: 'forward',
   },
 
-  // — Right cluster (mirrored positions, different heights/variants) —
-  {
-    id: 'r5',
-    path: generateBuildingPath({ x: 414, width: 78, groundY: 580, height: 258, floors: 9, windowCols: 3, variant: 'parapet' }),
-    drawRange: [0.54, 0.73],
-    strokeColor: '#93c5fd',
-    strokeWidth: 1.5,
-    drawDirection: 'reverse',
-  },
+  // — Right cluster — mirror positions, slightly different heights/variants
   {
     id: 'r4',
-    path: generateBuildingPath({ x: 506, width: 62, groundY: 580, height: 228, floors: 7, windowCols: 2, variant: 'simple' }),
-    drawRange: [0.42, 0.58],
+    path: generateBuildingPath({ x: 413, width: 72, groundY: 580, height: 268, floors: 9, windowCols: 3, variant: 'parapet' }),
+    drawRange: [0.50, 0.72],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
     drawDirection: 'forward',
   },
   {
     id: 'r3',
-    path: generateBuildingPath({ x: 582, width: 68, groundY: 580, height: 185, floors: 6, windowCols: 3, variant: 'parapet' }),
-    drawRange: [0.30, 0.46],
+    path: generateBuildingPath({ x: 502, width: 78, groundY: 580, height: 215, floors: 7, windowCols: 3, variant: 'simple' }),
+    drawRange: [0.34, 0.54],
     strokeColor: '#93c5fd',
     strokeWidth: 1.5,
     drawDirection: 'reverse',
   },
   {
     id: 'r2',
-    path: generateBuildingPath({ x: 664, width: 58, groundY: 580, height: 108, floors: 4, windowCols: 2, variant: 'simple' }),
-    drawRange: [0.18, 0.34],
+    path: generateBuildingPath({ x: 625, width: 70, groundY: 580, height: 148, floors: 5, windowCols: 2, variant: 'parapet' }),
+    drawRange: [0.20, 0.38],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
     drawDirection: 'forward',
   },
   {
     id: 'r1',
-    path: generateBuildingPath({ x: 736, width: 52, groundY: 580, height: 95, floors: 3, windowCols: 2, variant: 'parapet' }),
-    drawRange: [0.07, 0.22],
+    path: generateBuildingPath({ x: 733, width: 62, groundY: 580, height: 98, floors: 3, windowCols: 2, variant: 'simple' }),
+    drawRange: [0.07, 0.24],
     strokeColor: '#93c5fd',
     strokeWidth: 1.5,
     drawDirection: 'reverse',
@@ -177,18 +160,18 @@ export const BUILDINGS: BuildingData[] = [
 
 export const ANNOTATIONS: AnnotationData[] = [
   {
-    id: 'ann-l5',
-    path: 'M 302,580 L 302,302 M 299,580 L 305,580 M 299,302 L 305,302',
-    label: '278m',
-    labelX: 307,
-    labelY: 440,
+    id: 'ann-l4',
+    path: 'M 309,580 L 309,292 M 306,580 L 312,580 M 306,292 L 312,292',
+    label: '288m',
+    labelX: 314,
+    labelY: 435,
     drawRange: [0.88, 0.95],
   },
   {
-    id: 'ann-r5',
-    path: 'M 498,580 L 498,322 M 495,580 L 501,580 M 495,322 L 501,322',
-    label: '258m',
-    labelX: 503,
+    id: 'ann-r4',
+    path: 'M 491,580 L 491,312 M 488,580 L 494,580 M 488,312 L 494,312',
+    label: '268m',
+    labelX: 496,
     labelY: 445,
     drawRange: [0.93, 1.0],
   },

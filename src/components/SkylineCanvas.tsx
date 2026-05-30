@@ -9,7 +9,7 @@ interface SkylineCanvasProps {
   preserveAspectRatio?: string
 }
 
-export function SkylineCanvas({ preserveAspectRatio = 'xMidYMax meet' }: SkylineCanvasProps) {
+export function SkylineCanvas({ preserveAspectRatio = 'xMidYMax slice' }: SkylineCanvasProps) {
   const buildingRefs = useRef<Map<string, SVGPathElement>>(new Map())
   const annotationRefs = useRef<Map<string, SVGPathElement>>(new Map())
   const annotationTextRefs = useRef<Map<string, SVGTextElement>>(new Map())
