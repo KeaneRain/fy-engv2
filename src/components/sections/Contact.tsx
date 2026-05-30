@@ -1,37 +1,27 @@
-import { useRef, type FormEvent } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { type FormEvent } from 'react'
+import { LineReveal, TypewriterText } from '../ui/TextReveal'
 import { Button } from '../ui/Button'
 import { CONTACT } from '../../data/content'
 
 const inputClass = 'w-full bg-navy-800 border border-navy-700 text-white text-sm px-4 py-3 focus:outline-none focus:border-blueprint-600 placeholder:text-slate-600 font-body transition-colors'
 
 export function Contact() {
-  const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
-
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     // Static form — no backend
   }
 
   return (
-    <section id="contact" ref={ref}>
+    <section id="contact">
       <div className="bg-navy-950/40 border-t border-navy-800 py-24 px-10 md:px-24">
         <div className="max-w-4xl mx-auto grid grid-cols-1 gap-10">
           <div>
-            <motion.h3
-              initial={{ opacity: 0, y: 16 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              className="text-3xl font-heading text-white uppercase mb-6 leading-tight"
-            >
-              Let's Build Something<br />Great Together.
-            </motion.h3>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ delay: 0.2 }}
-              className="space-y-3 text-sm font-body"
-            >
+            <h3 className="text-3xl font-heading text-white uppercase mb-6 leading-tight">
+              <TypewriterText delay={0} className="block">Let's Build Something</TypewriterText>
+              <TypewriterText delay={0.9} className="block">Great Together.</TypewriterText>
+            </h3>
+
+            <LineReveal delay={0.2} className="space-y-3 text-sm font-body">
               <p>
                 <span className="text-blueprint-300 font-mono text-xs">[TEL]</span>{' '}
                 <span className="text-slate-300">{CONTACT.phone}</span>
@@ -44,24 +34,20 @@ export function Contact() {
                 <span className="text-blueprint-300 font-mono text-xs">[ADDR]</span>{' '}
                 <span className="text-slate-300">{CONTACT.address}</span>
               </p>
-            </motion.div>
+            </LineReveal>
           </div>
 
-          <motion.form
-            onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.3 }}
-            className="space-y-3"
-          >
-            <div className="grid grid-cols-2 gap-3">
-              <input type="text" placeholder="Name" aria-label="Name" className={inputClass} />
-              <input type="email" placeholder="Email" aria-label="Email" className={inputClass} />
-            </div>
-            <input type="tel" placeholder="Phone" aria-label="Phone" className={inputClass} />
-            <textarea placeholder="Message" aria-label="Message" rows={4} className={`${inputClass} resize-none`} />
-            <Button type="submit" className="w-full">Send Message</Button>
-          </motion.form>
+          <LineReveal delay={0.4}>
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <div className="grid grid-cols-2 gap-3">
+                <input type="text" placeholder="Name" aria-label="Name" className={inputClass} />
+                <input type="email" placeholder="Email" aria-label="Email" className={inputClass} />
+              </div>
+              <input type="tel" placeholder="Phone" aria-label="Phone" className={inputClass} />
+              <textarea placeholder="Message" aria-label="Message" rows={4} className={`${inputClass} resize-none`} />
+              <Button type="submit" className="w-full">Send Message</Button>
+            </form>
+          </LineReveal>
         </div>
       </div>
 
