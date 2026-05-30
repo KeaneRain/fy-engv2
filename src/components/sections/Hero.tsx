@@ -3,8 +3,8 @@ import { Button } from '../ui/Button'
 
 export function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 pb-12 px-8 md:px-12">
-      <div className="max-w-2xl mx-auto w-full text-center">
+    <section id="home" className="min-h-screen flex items-center pt-24 pb-16 px-10 md:px-24">
+      <div className="max-w-3xl mx-auto w-full text-center">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}

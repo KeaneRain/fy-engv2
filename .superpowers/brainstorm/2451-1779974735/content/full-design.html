@@ -1,0 +1,129 @@
+<h2>Full Design — Centered Content + Side Buildings</h2>
+<p class="subtitle">Here's what the final layout looks like across all sections</p>
+
+<div class="mockup" style="margin-bottom:24px">
+  <div class="mockup-header">Desktop — Hero section (scroll position: top)</div>
+  <div class="mockup-body" style="background:#0a1628;min-height:300px;position:relative;overflow:hidden;display:flex;flex-direction:column">
+
+    <!-- Grid background -->
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(37,99,235,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,0.05) 1px,transparent 1px);background-size:30px 30px"></div>
+
+    <!-- Nav -->
+    <div style="position:relative;z-index:10;padding:10px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(37,99,235,0.15)">
+      <span style="color:#fff;font-family:monospace;font-size:11px;letter-spacing:2px">FY ENGINEERING</span>
+      <div style="display:flex;gap:16px">
+        <span style="color:#94a3b8;font-size:9px;font-family:monospace">HOME</span>
+        <span style="color:#94a3b8;font-size:9px;font-family:monospace">SERVICES</span>
+        <span style="color:#94a3b8;font-size:9px;font-family:monospace">PROJECTS</span>
+        <span style="color:#94a3b8;font-size:9px;font-family:monospace">CONTACT</span>
+      </div>
+    </div>
+
+    <!-- Buildings layer (full width, scale 1.0 at top) -->
+    <div style="position:absolute;inset:0;top:35px;display:flex;align-items:flex-end;justify-content:space-between">
+      <!-- Left buildings -->
+      <div style="width:32%;height:100%;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:2px;padding:0 6px;transform:scale(1.0);transform-origin:bottom left">
+          <div style="flex:0.8;background:rgba(37,99,235,0.3);height:80px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+          <div style="flex:1.4;background:rgba(37,99,235,0.2);height:150px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+          <div style="flex:1;background:rgba(37,99,235,0.3);height:100px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+          <div style="flex:0.7;background:rgba(37,99,235,0.25);height:60px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+          <div style="flex:1.2;background:rgba(37,99,235,0.2);height:180px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+        </div>
+        <!-- Fade to center -->
+        <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 40%,#0a1628 100%)"></div>
+      </div>
+      <!-- Right buildings -->
+      <div style="width:32%;height:100%;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:2px;padding:0 6px;transform:scale(1.0);transform-origin:bottom right">
+          <div style="flex:1.2;background:rgba(37,99,235,0.2);height:170px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+          <div style="flex:0.7;background:rgba(37,99,235,0.3);height:55px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+          <div style="flex:1;background:rgba(37,99,235,0.25);height:110px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+          <div style="flex:1.4;background:rgba(37,99,235,0.2);height:145px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+          <div style="flex:0.8;background:rgba(37,99,235,0.3);height:75px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+        </div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to left,transparent 40%,#0a1628 100%)"></div>
+      </div>
+      <!-- Radial center clear -->
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 100% at 50% 80%,#0a1628 30%,transparent 100%)"></div>
+    </div>
+
+    <!-- Centered content -->
+    <div style="position:relative;z-index:5;flex:1;display:flex;align-items:center;justify-content:center;padding:20px">
+      <div style="max-width:380px;text-align:left">
+        <p style="color:#60a5fa;font-family:monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px">Engineering Consultancy</p>
+        <h3 style="color:#fff;font-size:22px;line-height:1.15;margin-bottom:8px;text-transform:uppercase;font-weight:700">Engineering Solutions<br><span style="color:#3b82f6">Built on</span> Precision.</h3>
+        <p style="color:#94a3b8;font-size:9px;margin-bottom:14px;letter-spacing:1px">Precision · Passion · Progress</p>
+        <div style="display:flex;gap:8px">
+          <div style="padding:7px 14px;background:rgba(37,99,235,0.8);border-radius:3px;color:#fff;font-size:9px;font-family:monospace">Get a Quote</div>
+          <div style="padding:7px 14px;border:1px solid rgba(37,99,235,0.6);border-radius:3px;color:#60a5fa;font-size:9px;font-family:monospace">View Projects</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scale indicator -->
+    <div style="position:absolute;bottom:8px;right:10px;font-size:8px;color:#60a5fa;font-family:monospace;opacity:0.6">buildings scale: 1.0 (top of page)</div>
+  </div>
+</div>
+
+<div class="mockup" style="margin-bottom:24px">
+  <div class="mockup-header">Desktop — Mid-page (scroll ~50%) — buildings zoomed in</div>
+  <div class="mockup-body" style="background:#0a1628;min-height:260px;position:relative;overflow:hidden;display:flex;flex-direction:column">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(37,99,235,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,0.05) 1px,transparent 1px);background-size:30px 30px"></div>
+    <!-- Buildings more zoomed (scale ~1.1) -->
+    <div style="position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:space-between">
+      <div style="width:32%;height:100%;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:2px;padding:0 6px;transform:scale(1.10);transform-origin:bottom left">
+          <div style="flex:0.8;background:rgba(37,99,235,0.35);height:80px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+          <div style="flex:1.4;background:rgba(37,99,235,0.25);height:150px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+          <div style="flex:1;background:rgba(37,99,235,0.35);height:100px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+          <div style="flex:0.7;background:rgba(37,99,235,0.3);height:60px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+          <div style="flex:1.2;background:rgba(37,99,235,0.25);height:180px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+        </div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 40%,#0a1628 100%)"></div>
+      </div>
+      <div style="width:32%;height:100%;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:2px;padding:0 6px;transform:scale(1.10);transform-origin:bottom right">
+          <div style="flex:1.2;background:rgba(37,99,235,0.25);height:170px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+          <div style="flex:0.7;background:rgba(37,99,235,0.35);height:55px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+          <div style="flex:1;background:rgba(37,99,235,0.3);height:110px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+          <div style="flex:1.4;background:rgba(37,99,235,0.25);height:145px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+          <div style="flex:0.8;background:rgba(37,99,235,0.35);height:75px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+        </div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to left,transparent 40%,#0a1628 100%)"></div>
+      </div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 100% at 50% 80%,#0a1628 30%,transparent 100%)"></div>
+    </div>
+    <!-- Services section content -->
+    <div style="position:relative;z-index:5;flex:1;display:flex;align-items:center;justify-content:center;padding:20px">
+      <div style="max-width:380px;width:100%">
+        <p style="color:#60a5fa;font-family:monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px">What We Do</p>
+        <h3 style="color:#fff;font-size:18px;text-transform:uppercase;font-weight:700;margin-bottom:14px">Services</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div style="padding:10px;border:1px solid rgba(37,99,235,0.3);border-radius:4px;background:rgba(37,99,235,0.05)">
+            <div style="color:#60a5fa;font-size:8px;font-family:monospace;margin-bottom:4px">STRUCTURAL</div>
+            <div style="height:5px;width:70%;background:rgba(148,163,184,0.2);border-radius:2px"></div>
+          </div>
+          <div style="padding:10px;border:1px solid rgba(37,99,235,0.3);border-radius:4px;background:rgba(37,99,235,0.05)">
+            <div style="color:#60a5fa;font-size:8px;font-family:monospace;margin-bottom:4px">CIVIL</div>
+            <div style="height:5px;width:60%;background:rgba(148,163,184,0.2);border-radius:2px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;bottom:8px;right:10px;font-size:8px;color:#60a5fa;font-family:monospace;opacity:0.6">buildings scale: 1.1 (mid-scroll)</div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>What changes in code</h3>
+  <ul style="color:#94a3b8;font-size:13px;line-height:1.8;padding-left:20px">
+    <li><strong style="color:#e2e8f0">App.tsx</strong> — SkylineCanvas moves to a <code>fixed</code> full-viewport background div. Content becomes a single centered column (<code>max-w-3xl mx-auto</code>). Radial gradient overlay added as CSS.</li>
+    <li><strong style="color:#e2e8f0">App.tsx</strong> — A <code>useRef</code> on the canvas wrapper + new GSAP ScrollTrigger scrubs <code>scale(1.0 → 1.2)</code> from page top to bottom.</li>
+    <li><strong style="color:#e2e8f0">SkylineCanvas.tsx</strong> — No changes. Existing draw animation continues to work unchanged.</li>
+    <li><strong style="color:#e2e8f0">Hero.tsx + sections</strong> — Remove the <code>max-w-lg</code> left-align constraint, use <code>mx-auto</code> centering so content sits in the middle of the page.</li>
+    <li><strong style="color:#e2e8f0">Mobile</strong> — Current mobile background layer (fixed, 65% opacity) stays as-is since the new layout already treats canvas as background on all screen sizes.</li>
+  </ul>
+</div>
+
+<p class="subtitle">Does this match what you're imagining? Let me know in the terminal.</p>

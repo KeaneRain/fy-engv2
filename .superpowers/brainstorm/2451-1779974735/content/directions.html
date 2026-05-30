@@ -1,0 +1,151 @@
+<h2>Coming From Different Directions</h2>
+<p class="subtitle">Which kind of directional entry feels right?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a1628;height:190px;border-radius:6px;overflow:hidden;position:relative">
+      <div style="position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:space-between;padding:0 12px">
+        <!-- Left side buildings with directional arrows -->
+        <div style="width:38%;height:100%;position:relative;display:flex;align-items:flex-end;gap:3px;padding-bottom:0">
+          <!-- Building sliding from left -->
+          <div style="position:relative;flex:1">
+            <div style="position:absolute;top:30%;left:-8px;color:#60a5fa;font-size:10px;font-family:monospace">←</div>
+            <div style="background:rgba(37,99,235,0.35);height:90px;border-top:1px solid rgba(96,165,250,0.7);width:100%"></div>
+          </div>
+          <!-- Building sliding from bottom -->
+          <div style="position:relative;flex:1.4">
+            <div style="position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);color:#60a5fa;font-size:10px;font-family:monospace">↓</div>
+            <div style="background:rgba(37,99,235,0.25);height:140px;border-top:1px solid rgba(96,165,250,0.7);width:100%"></div>
+          </div>
+          <!-- Building sliding from top -->
+          <div style="position:relative;flex:0.9">
+            <div style="position:absolute;top:4px;left:50%;transform:translateX(-50%);color:#60a5fa;font-size:10px;font-family:monospace">↑</div>
+            <div style="background:rgba(37,99,235,0.3);height:65px;border-top:1px solid rgba(96,165,250,0.7);width:100%"></div>
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 50%,#0a1628 100%)"></div>
+        </div>
+        <!-- Right side buildings with directional arrows -->
+        <div style="width:38%;height:100%;position:relative;display:flex;align-items:flex-end;gap:3px;padding-bottom:0">
+          <!-- Building from top -->
+          <div style="position:relative;flex:0.9">
+            <div style="position:absolute;top:4px;left:50%;transform:translateX(-50%);color:#60a5fa;font-size:10px;font-family:monospace">↑</div>
+            <div style="background:rgba(37,99,235,0.3);height:75px;border-top:1px solid rgba(96,165,250,0.7);width:100%"></div>
+          </div>
+          <!-- Building from bottom -->
+          <div style="position:relative;flex:1.4">
+            <div style="position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);color:#60a5fa;font-size:10px;font-family:monospace">↓</div>
+            <div style="background:rgba(37,99,235,0.2);height:150px;border-top:1px solid rgba(96,165,250,0.7);width:100%"></div>
+          </div>
+          <!-- Building from right -->
+          <div style="position:relative;flex:1">
+            <div style="position:absolute;top:30%;right:-8px;color:#60a5fa;font-size:10px;font-family:monospace">→</div>
+            <div style="background:rgba(37,99,235,0.35);height:85px;border-top:1px solid rgba(96,165,250,0.7);width:100%"></div>
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to left,transparent 50%,#0a1628 100%)"></div>
+        </div>
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 48% 100% at 50% 80%,#0a1628 30%,transparent 100%)"></div>
+      </div>
+      <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:8px;color:#60a5fa;font-family:monospace;white-space:nowrap;opacity:0.7">each building slides in from a different edge</div>
+    </div>
+    <div class="card-body">
+      <h3>A — Slide From Different Edges</h3>
+      <p>Each building translates in from a different direction (left, right, top, bottom) as you scroll. Staggered timing so they don't all arrive at once. Buildings physically fly in from the sides.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a1628;height:190px;border-radius:6px;overflow:hidden;position:relative">
+      <!-- Sketch trace direction illustration -->
+      <div style="position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:space-between;padding:0 12px">
+        <div style="width:38%;height:100%;position:relative;display:flex;align-items:flex-end;gap:3px">
+          <!-- Building traced bottom-up -->
+          <div style="position:relative;flex:1;height:90px">
+            <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(37,99,235,0.35);height:90px;border-top:1px solid rgba(96,165,250,0.7)"></div>
+            <div style="position:absolute;left:50%;top:10px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:1px">
+              <div style="width:1px;height:20px;background:linear-gradient(to top,#60a5fa,transparent)"></div>
+              <span style="color:#60a5fa;font-size:8px">↑ trace</span>
+            </div>
+          </div>
+          <!-- Building traced top-down -->
+          <div style="position:relative;flex:1.4;height:140px">
+            <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(37,99,235,0.25);height:140px;border-top:1px solid rgba(96,165,250,0.7)"></div>
+            <div style="position:absolute;left:50%;top:10px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:1px">
+              <span style="color:#60a5fa;font-size:8px">↓ trace</span>
+              <div style="width:1px;height:20px;background:linear-gradient(to bottom,#60a5fa,transparent)"></div>
+            </div>
+          </div>
+          <!-- Building traced left-right -->
+          <div style="position:relative;flex:0.9;height:65px">
+            <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(37,99,235,0.3);height:65px;border-top:1px solid rgba(96,165,250,0.7)"></div>
+            <div style="position:absolute;left:2px;top:50%;transform:translateY(-50%);color:#60a5fa;font-size:8px">→</div>
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 50%,#0a1628 100%)"></div>
+        </div>
+        <div style="width:38%;height:100%;position:relative;display:flex;align-items:flex-end;gap:3px">
+          <div style="position:relative;flex:0.9;height:75px">
+            <div style="background:rgba(37,99,235,0.3);height:75px;border-top:1px solid rgba(96,165,250,0.7);width:100%"></div>
+            <div style="position:absolute;right:2px;top:50%;transform:translateY(-50%);color:#60a5fa;font-size:8px">←</div>
+          </div>
+          <div style="position:relative;flex:1.4;height:150px">
+            <div style="background:rgba(37,99,235,0.2);height:150px;border-top:1px solid rgba(96,165,250,0.7);width:100%"></div>
+            <div style="position:absolute;left:50%;top:10px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:1px">
+              <div style="width:1px;height:20px;background:linear-gradient(to top,#60a5fa,transparent)"></div>
+              <span style="color:#60a5fa;font-size:8px">↑ trace</span>
+            </div>
+          </div>
+          <div style="position:relative;flex:1;height:85px">
+            <div style="background:rgba(37,99,235,0.35);height:85px;border-top:1px solid rgba(96,165,250,0.7);width:100%"></div>
+            <div style="position:absolute;left:50%;top:10px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:1px">
+              <span style="color:#60a5fa;font-size:8px">↓ trace</span>
+              <div style="width:1px;height:20px;background:linear-gradient(to bottom,#60a5fa,transparent)"></div>
+            </div>
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to left,transparent 50%,#0a1628 100%)"></div>
+        </div>
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 48% 100% at 50% 80%,#0a1628 30%,transparent 100%)"></div>
+      </div>
+      <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:8px;color:#60a5fa;font-family:monospace;white-space:nowrap;opacity:0.7">each building's SVG path traces a different direction</div>
+    </div>
+    <div class="card-body">
+      <h3>B — Sketch From Different Directions</h3>
+      <p>The stroke-draw animation on each building traces in a different direction — some draw upward, some downward, some left-to-right. Still the same pen/sketch feel but each building has its own draw direction.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a1628;height:190px;border-radius:6px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center">
+      <div style="position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:space-between;padding:0 12px">
+        <div style="width:38%;height:100%;position:relative;display:flex;align-items:flex-end;gap:3px">
+          <div style="flex:1;background:rgba(37,99,235,0.35);height:90px;border-top:1px solid rgba(96,165,250,0.7)"></div>
+          <div style="flex:1.4;background:rgba(37,99,235,0.25);height:140px;border-top:1px solid rgba(96,165,250,0.7)"></div>
+          <div style="flex:0.9;background:rgba(37,99,235,0.3);height:65px;border-top:1px solid rgba(96,165,250,0.7)"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 50%,#0a1628 100%)"></div>
+        </div>
+        <div style="width:38%;height:100%;position:relative;display:flex;align-items:flex-end;gap:3px">
+          <div style="flex:0.9;background:rgba(37,99,235,0.3);height:75px;border-top:1px solid rgba(96,165,250,0.7)"></div>
+          <div style="flex:1.4;background:rgba(37,99,235,0.2);height:150px;border-top:1px solid rgba(96,165,250,0.7)"></div>
+          <div style="flex:1;background:rgba(37,99,235,0.35);height:85px;border-top:1px solid rgba(96,165,250,0.7)"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to left,transparent 50%,#0a1628 100%)"></div>
+        </div>
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 48% 100% at 50% 80%,#0a1628 30%,transparent 100%)"></div>
+      </div>
+      <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:4px">
+        <div style="display:flex;gap:6px;font-size:14px">
+          <span style="color:#60a5fa">←</span>
+          <span style="color:#60a5fa">↑</span>
+          <span style="color:#60a5fa">↓</span>
+          <span style="color:#60a5fa">→</span>
+        </div>
+        <div style="font-size:8px;color:#94a3b8;font-family:monospace;text-align:center">slide in + sketch trace<br>combined</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Slide + Sketch Combined</h3>
+      <p>Buildings both slide in from different directions AND have the sketch trace effect at the same time. Most dramatic — buildings fly in from the edges while their outlines draw themselves simultaneously.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px">Check http://localhost:60792 and click your pick, or describe it in the terminal.</p>

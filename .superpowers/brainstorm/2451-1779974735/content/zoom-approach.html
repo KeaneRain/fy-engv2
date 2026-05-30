@@ -1,0 +1,92 @@
+<h2>Zoom-In Approach</h2>
+<p class="subtitle">How the buildings scale as you scroll down the page</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a1628;height:200px;border-radius:6px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center">
+      <!-- Animated zoom demo -->
+      <div style="position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:space-between">
+        <!-- Left buildings zoomed-out (small) fading to zoomed-in (large) gradient hint -->
+        <div style="width:35%;height:100%;position:relative;overflow:hidden">
+          <div style="position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:3px;padding:0 8px;transform:scale(1.15);transform-origin:bottom center">
+            <div style="flex:1;background:rgba(37,99,235,0.35);height:70px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+            <div style="flex:1.3;background:rgba(37,99,235,0.25);height:120px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+            <div style="flex:0.8;background:rgba(37,99,235,0.35);height:55px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+            <div style="flex:1.5;background:rgba(37,99,235,0.2);height:145px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 30%,#0a1628 100%)"></div>
+        </div>
+        <!-- Right buildings -->
+        <div style="width:35%;height:100%;position:relative;overflow:hidden">
+          <div style="position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:3px;padding:0 8px;transform:scale(1.15);transform-origin:bottom center">
+            <div style="flex:1.4;background:rgba(37,99,235,0.2);height:135px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+            <div style="flex:0.9;background:rgba(37,99,235,0.35);height:60px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+            <div style="flex:1.2;background:rgba(37,99,235,0.3);height:100px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+            <div style="flex:1;background:rgba(37,99,235,0.35);height:80px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to left,transparent 30%,#0a1628 100%)"></div>
+        </div>
+        <!-- Center vignette -->
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 55% 100% at 50% 60%,#0a1628 35%,transparent 100%)"></div>
+      </div>
+      <!-- Scroll arrows overlay -->
+      <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:4px;opacity:0.6">
+        <div style="color:#60a5fa;font-size:10px;font-family:monospace;letter-spacing:2px">SCROLL ↓</div>
+        <div style="color:#60a5fa;font-size:10px;font-family:monospace">buildings grow larger</div>
+        <div style="display:flex;gap:6px;margin-top:6px">
+          <div style="font-size:9px;color:#94a3b8;font-family:monospace">scale: 1.0 → 1.2</div>
+        </div>
+      </div>
+      <!-- Scale indicator -->
+      <div style="position:absolute;bottom:8px;right:10px;font-size:9px;color:#60a5fa;font-family:monospace;opacity:0.7">GSAP + ScrollTrigger scrub</div>
+    </div>
+    <div class="card-body">
+      <h3>A — Scroll-Scrubbed Scale (Recommended)</h3>
+      <p>The entire SVG canvas scales from 1.0 to 1.2 tied directly to scroll progress via GSAP ScrollTrigger scrub. The buildings grow continuously as you read — smooth, subtle depth. Works with your existing GSAP setup.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a1628;height:200px;border-radius:6px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center">
+      <div style="position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:space-between">
+        <div style="width:35%;height:100%;position:relative;overflow:hidden">
+          <div style="position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:3px;padding:0 8px">
+            <div style="flex:1;background:rgba(37,99,235,0.35);height:60px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+            <div style="flex:1.3;background:rgba(37,99,235,0.25);height:100px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+            <div style="flex:0.8;background:rgba(37,99,235,0.35);height:45px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+            <div style="flex:1.5;background:rgba(37,99,235,0.2);height:125px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 30%,#0a1628 100%)"></div>
+        </div>
+        <div style="width:35%;height:100%;position:relative;overflow:hidden">
+          <div style="position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:3px;padding:0 8px">
+            <div style="flex:1.4;background:rgba(37,99,235,0.2);height:115px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+            <div style="flex:0.9;background:rgba(37,99,235,0.35);height:50px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+            <div style="flex:1.2;background:rgba(37,99,235,0.3);height:85px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+            <div style="flex:1;background:rgba(37,99,235,0.35);height:65px;border-top:1px solid rgba(96,165,250,0.6)"></div>
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to left,transparent 30%,#0a1628 100%)"></div>
+        </div>
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 55% 100% at 50% 60%,#0a1628 35%,transparent 100%)"></div>
+      </div>
+      <!-- Section markers -->
+      <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div style="display:flex;gap:8px">
+          <div style="padding:4px 8px;border:1px solid rgba(37,99,235,0.5);border-radius:3px;font-size:9px;color:#60a5fa;font-family:monospace">Hero<br>scale 1.0</div>
+          <div style="padding:4px 8px;border:1px solid rgba(37,99,235,0.5);border-radius:3px;font-size:9px;color:#60a5fa;font-family:monospace">Services<br>scale 1.07</div>
+          <div style="padding:4px 8px;border:1px solid rgba(37,99,235,0.5);border-radius:3px;font-size:9px;color:#60a5fa;font-family:monospace">Contact<br>scale 1.2</div>
+        </div>
+        <div style="font-size:9px;color:#94a3b8;font-family:monospace;margin-top:4px">snaps per section</div>
+      </div>
+      <div style="position:absolute;bottom:8px;right:10px;font-size:9px;color:#60a5fa;font-family:monospace;opacity:0.7">section-based keyframes</div>
+    </div>
+    <div class="card-body">
+      <h3>B — Section-Stepped Zoom</h3>
+      <p>Buildings snap to a new scale at each section boundary (Hero → Services → Projects etc.), with a smooth tween between states. More dramatic jumps between sections, less continuous. Creates a chapter-like feel.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px">Both approaches keep your existing draw-on-scroll SVG animation. The zoom is layered on top.</p>

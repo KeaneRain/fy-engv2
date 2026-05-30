@@ -43,5 +43,5 @@ export const STATS = [
 export const CONTACT = {
   phone: '+63 962 894 8608',
   email: 'fyenggcons@gmail.com',
-  address: 'Davao City, Philippines',
+  address: 'Cabuyao City, Philippines',
 }

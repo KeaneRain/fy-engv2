@@ -16,8 +16,8 @@ export function Contact() {
 
   return (
     <section id="contact" ref={ref}>
-      <div className="bg-navy-950/40 border-t border-navy-800 py-16 px-8 md:px-12">
-        <div className="max-w-3xl mx-auto grid grid-cols-1 gap-10">
+      <div className="bg-navy-950/40 border-t border-navy-800 py-24 px-10 md:px-24">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 gap-10">
           <div>
             <motion.h3
               initial={{ opacity: 0, y: 16 }}
@@ -65,8 +65,8 @@ export function Contact() {
         </div>
       </div>
 
-      <footer className="bg-navy-950/40 border-t border-navy-800 py-5 px-8 md:px-12">
-        <div className="max-w-3xl mx-auto flex items-center justify-between flex-wrap gap-4">
+      <footer className="bg-navy-950/40 border-t border-navy-800 py-5 px-10 md:px-24">
+        <div className="max-w-4xl mx-auto flex items-center justify-between flex-wrap gap-4">
           <div className="flex items-center gap-3">
             <div className="w-7 h-7 border border-blueprint-600 flex items-center justify-center">
               <span className="text-white font-heading text-xs font-bold">Fy</span>

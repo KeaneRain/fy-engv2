@@ -1,0 +1,113 @@
+<h2>Layout Options</h2>
+<p class="subtitle">Content centered, buildings on the sides — pick a direction for the zoom effect</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a1628;padding:16px;height:180px;display:flex;gap:8px;align-items:stretch;border-radius:6px;overflow:hidden">
+      <!-- Left buildings panel -->
+      <div style="width:22%;background:linear-gradient(to top,rgba(37,99,235,0.5) 0%,rgba(37,99,235,0.15) 60%,transparent 100%);border-right:1px solid rgba(37,99,235,0.3);position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:2px;padding:0 4px">
+          <div style="flex:1;background:rgba(37,99,235,0.4);height:80px;border-top:1px solid #60a5fa"></div>
+          <div style="flex:1.5;background:rgba(37,99,235,0.3);height:120px;border-top:1px solid #60a5fa"></div>
+          <div style="flex:1;background:rgba(37,99,235,0.4);height:60px;border-top:1px solid #60a5fa"></div>
+        </div>
+      </div>
+      <!-- Center content -->
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:8px">
+        <div style="height:6px;width:50%;background:rgba(255,255,255,0.15);border-radius:3px"></div>
+        <div style="height:14px;width:80%;background:rgba(255,255,255,0.5);border-radius:3px"></div>
+        <div style="height:14px;width:70%;background:rgba(255,255,255,0.5);border-radius:3px"></div>
+        <div style="height:8px;width:60%;background:rgba(148,163,184,0.3);border-radius:3px;margin-top:4px"></div>
+        <div style="display:flex;gap:6px;margin-top:6px">
+          <div style="height:22px;width:60px;background:rgba(37,99,235,0.8);border-radius:3px"></div>
+          <div style="height:22px;width:60px;border:1px solid rgba(37,99,235,0.6);border-radius:3px"></div>
+        </div>
+      </div>
+      <!-- Right buildings panel -->
+      <div style="width:22%;background:linear-gradient(to top,rgba(37,99,235,0.5) 0%,rgba(37,99,235,0.15) 60%,transparent 100%);border-left:1px solid rgba(37,99,235,0.3);position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:2px;padding:0 4px">
+          <div style="flex:1;background:rgba(37,99,235,0.4);height:90px;border-top:1px solid #60a5fa"></div>
+          <div style="flex:1.5;background:rgba(37,99,235,0.3);height:140px;border-top:1px solid #60a5fa"></div>
+          <div style="flex:1;background:rgba(37,99,235,0.4);height:50px;border-top:1px solid #60a5fa"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Flanking Panels</h3>
+      <p>Buildings split into two sticky side panels. Content centered in the middle column. On scroll, buildings zoom in slowly (scale 1.0 → 1.15) giving depth as you read through sections.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a1628;padding:16px;height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:6px;overflow:hidden;position:relative">
+      <!-- Full-width buildings in background, fading to sides -->
+      <div style="position:absolute;inset:0;display:flex;align-items:flex-end">
+        <div style="position:absolute;left:0;bottom:0;width:28%;display:flex;align-items:flex-end;gap:2px;padding:0 6px">
+          <div style="flex:1;background:rgba(37,99,235,0.25);height:90px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+          <div style="flex:1.5;background:rgba(37,99,235,0.2);height:130px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+        </div>
+        <div style="position:absolute;right:0;bottom:0;width:28%;display:flex;align-items:flex-end;gap:2px;padding:0 6px">
+          <div style="flex:1.5;background:rgba(37,99,235,0.2);height:140px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+          <div style="flex:1;background:rgba(37,99,235,0.25);height:70px;border-top:1px solid rgba(96,165,250,0.5)"></div>
+        </div>
+        <!-- Fade vignette -->
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 50% 50%,#0a1628 40%,transparent 100%)"></div>
+      </div>
+      <!-- Centered content -->
+      <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;width:55%">
+        <div style="height:5px;width:50%;background:rgba(255,255,255,0.15);border-radius:3px"></div>
+        <div style="height:13px;width:90%;background:rgba(255,255,255,0.5);border-radius:3px"></div>
+        <div style="height:13px;width:75%;background:rgba(255,255,255,0.5);border-radius:3px"></div>
+        <div style="height:7px;width:65%;background:rgba(148,163,184,0.3);border-radius:3px;margin-top:3px"></div>
+        <div style="display:flex;gap:6px;margin-top:6px">
+          <div style="height:20px;width:55px;background:rgba(37,99,235,0.8);border-radius:3px"></div>
+          <div style="height:20px;width:55px;border:1px solid rgba(37,99,235,0.6);border-radius:3px"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Radial Vignette</h3>
+      <p>Buildings span the full background but are revealed only at the left/right edges with a dark radial vignette clearing the center. Scroll zoom (scale 1.0 → 1.2) pulls the buildings "toward you" from the sides.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a1628;padding:16px;height:180px;display:flex;gap:6px;align-items:stretch;border-radius:6px;overflow:hidden">
+      <!-- Thin left strip -->
+      <div style="width:12%;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:1px">
+          <div style="flex:1;background:rgba(37,99,235,0.45);height:100px;border-top:1px solid #60a5fa;transform-origin:bottom center"></div>
+          <div style="flex:1;background:rgba(37,99,235,0.3);height:150px;border-top:1px solid #60a5fa"></div>
+        </div>
+        <div style="position:absolute;top:0;right:0;bottom:0;width:60%;background:linear-gradient(to left,#0a1628,transparent)"></div>
+      </div>
+      <!-- Center content (wider) -->
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:8px">
+        <div style="height:5px;width:45%;background:rgba(255,255,255,0.15);border-radius:3px"></div>
+        <div style="height:13px;width:85%;background:rgba(255,255,255,0.5);border-radius:3px"></div>
+        <div style="height:13px;width:70%;background:rgba(255,255,255,0.5);border-radius:3px"></div>
+        <div style="height:7px;width:58%;background:rgba(148,163,184,0.3);border-radius:3px;margin-top:3px"></div>
+        <div style="display:flex;gap:6px;margin-top:6px">
+          <div style="height:20px;width:55px;background:rgba(37,99,235,0.8);border-radius:3px"></div>
+          <div style="height:20px;width:55px;border:1px solid rgba(37,99,235,0.6);border-radius:3px"></div>
+        </div>
+      </div>
+      <!-- Thin right strip -->
+      <div style="width:12%;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:1px">
+          <div style="flex:1;background:rgba(37,99,235,0.3);height:140px;border-top:1px solid #60a5fa"></div>
+          <div style="flex:1;background:rgba(37,99,235,0.45);height:80px;border-top:1px solid #60a5fa"></div>
+        </div>
+        <div style="position:absolute;top:0;left:0;bottom:0;width:60%;background:linear-gradient(to right,#0a1628,transparent)"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Narrow Edge Strips</h3>
+      <p>Buildings are narrow vertical strips at the far left and right edges, partially faded out. Content takes most of the width. Zoom effect uses a perspective transform (translateZ) so buildings feel like they're receding behind the content.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px">Click your preferred layout. You can also describe what feels closest to your vision in the terminal.</p>

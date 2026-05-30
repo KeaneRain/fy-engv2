@@ -92,7 +92,7 @@ export const BUILDINGS: BuildingData[] = [
   // — Left cluster — grows taller toward center, wide gaps between buildings
   {
     id: 'l1',
-    path: generateBuildingPath({ x: 5, width: 62, groundY: 580, height: 95, floors: 3, windowCols: 2, variant: 'simple' }),
+    path: generateBuildingPath({ x: 5, width: 62, groundY: 580, height: 72, floors: 2, windowCols: 2, variant: 'simple' }),
     drawRange: [0.07, 0.24],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
@@ -100,7 +100,7 @@ export const BUILDINGS: BuildingData[] = [
   },
   {
     id: 'l2',
-    path: generateBuildingPath({ x: 105, width: 70, groundY: 580, height: 155, floors: 5, windowCols: 2, variant: 'parapet' }),
+    path: generateBuildingPath({ x: 105, width: 70, groundY: 580, height: 118, floors: 4, windowCols: 2, variant: 'parapet' }),
     drawRange: [0.20, 0.38],
     strokeColor: '#93c5fd',
     strokeWidth: 1.5,
@@ -108,7 +108,7 @@ export const BUILDINGS: BuildingData[] = [
   },
   {
     id: 'l3',
-    path: generateBuildingPath({ x: 220, width: 78, groundY: 580, height: 225, floors: 7, windowCols: 3, variant: 'simple' }),
+    path: generateBuildingPath({ x: 220, width: 78, groundY: 580, height: 172, floors: 6, windowCols: 3, variant: 'simple' }),
     drawRange: [0.34, 0.54],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
@@ -116,7 +116,7 @@ export const BUILDINGS: BuildingData[] = [
   },
   {
     id: 'l4',
-    path: generateBuildingPath({ x: 315, width: 72, groundY: 580, height: 288, floors: 10, windowCols: 3, variant: 'tapered' }),
+    path: generateBuildingPath({ x: 315, width: 72, groundY: 580, height: 220, floors: 8, windowCols: 3, variant: 'tapered' }),
     drawRange: [0.50, 0.72],
     strokeColor: '#93c5fd',
     strokeWidth: 1.5,
@@ -126,7 +126,7 @@ export const BUILDINGS: BuildingData[] = [
   // — Right cluster — mirror positions, slightly different heights/variants
   {
     id: 'r4',
-    path: generateBuildingPath({ x: 413, width: 72, groundY: 580, height: 268, floors: 9, windowCols: 3, variant: 'parapet' }),
+    path: generateBuildingPath({ x: 413, width: 72, groundY: 580, height: 205, floors: 7, windowCols: 3, variant: 'parapet' }),
     drawRange: [0.50, 0.72],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
@@ -134,7 +134,7 @@ export const BUILDINGS: BuildingData[] = [
   },
   {
     id: 'r3',
-    path: generateBuildingPath({ x: 502, width: 78, groundY: 580, height: 215, floors: 7, windowCols: 3, variant: 'simple' }),
+    path: generateBuildingPath({ x: 502, width: 78, groundY: 580, height: 164, floors: 5, windowCols: 3, variant: 'simple' }),
     drawRange: [0.34, 0.54],
     strokeColor: '#93c5fd',
     strokeWidth: 1.5,
@@ -142,7 +142,7 @@ export const BUILDINGS: BuildingData[] = [
   },
   {
     id: 'r2',
-    path: generateBuildingPath({ x: 625, width: 70, groundY: 580, height: 148, floors: 5, windowCols: 2, variant: 'parapet' }),
+    path: generateBuildingPath({ x: 625, width: 70, groundY: 580, height: 112, floors: 4, windowCols: 2, variant: 'parapet' }),
     drawRange: [0.20, 0.38],
     strokeColor: '#2563eb',
     strokeWidth: 1.5,
@@ -150,7 +150,7 @@ export const BUILDINGS: BuildingData[] = [
   },
   {
     id: 'r1',
-    path: generateBuildingPath({ x: 733, width: 62, groundY: 580, height: 98, floors: 3, windowCols: 2, variant: 'simple' }),
+    path: generateBuildingPath({ x: 733, width: 62, groundY: 580, height: 75, floors: 2, windowCols: 2, variant: 'simple' }),
     drawRange: [0.07, 0.24],
     strokeColor: '#93c5fd',
     strokeWidth: 1.5,
@@ -161,18 +161,18 @@ export const BUILDINGS: BuildingData[] = [
 export const ANNOTATIONS: AnnotationData[] = [
   {
     id: 'ann-l4',
-    path: 'M 309,580 L 309,292 M 306,580 L 312,580 M 306,292 L 312,292',
-    label: '288m',
+    path: 'M 309,580 L 309,360 M 306,580 L 312,580 M 306,360 L 312,360',
+    label: '220m',
     labelX: 314,
-    labelY: 435,
+    labelY: 470,
     drawRange: [0.88, 0.95],
   },
   {
     id: 'ann-r4',
-    path: 'M 491,580 L 491,312 M 488,580 L 494,580 M 488,312 L 494,312',
-    label: '268m',
+    path: 'M 491,580 L 491,375 M 488,580 L 494,580 M 488,375 L 494,375',
+    label: '205m',
     labelX: 496,
-    labelY: 445,
+    labelY: 478,
     drawRange: [0.93, 1.0],
   },
 ]

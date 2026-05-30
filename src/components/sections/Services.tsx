@@ -8,8 +8,8 @@ export function Services() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="services" className="py-20 px-8 md:px-12" ref={ref}>
-      <div className="max-w-3xl mx-auto">
+    <section id="services" className="py-32 px-10 md:px-24" ref={ref}>
+      <div className="max-w-4xl mx-auto">
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
