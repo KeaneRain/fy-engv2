@@ -1,49 +1,34 @@
-import { motion } from 'framer-motion'
 import { Button } from '../ui/Button'
+import { TypewriterText, WordSlide, LineReveal } from '../ui/TextReveal'
 
 export function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center pt-24 pb-16 px-10 md:px-24">
       <div className="max-w-3xl mx-auto w-full text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-blueprint-300 font-mono text-xs tracking-widest uppercase mb-5"
+        <WordSlide
+          delay={0.2}
+          className="text-blueprint-300 font-mono text-xs tracking-widest uppercase mb-5 block"
         >
           Engineering Consultancy
-        </motion.p>
+        </WordSlide>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="text-6xl md:text-7xl font-heading text-white leading-none uppercase mb-5"
-        >
-          Engineering<br />
-          Solutions<br />
-          <span className="text-blueprint-600">Built on</span><br />
-          Precision.
-        </motion.h1>
+        <h1 className="text-6xl md:text-7xl font-heading text-white leading-none uppercase mb-5">
+          <TypewriterText delay={0.5} className="block">Engineering</TypewriterText>
+          <TypewriterText delay={0.94} className="block">Solutions</TypewriterText>
+          <TypewriterText delay={1.30} className="block text-blueprint-600">Built on</TypewriterText>
+          <TypewriterText delay={1.62} className="block">Precision.</TypewriterText>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.9 }}
-          className="text-slate-400 font-body text-sm mb-8 tracking-wide"
-        >
-          Precision &bull; Passion &bull; Progress
-        </motion.p>
+        <LineReveal delay={2.1}>
+          <p className="text-slate-400 font-body text-sm mb-8 tracking-wide">
+            Precision &bull; Passion &bull; Progress
+          </p>
+        </LineReveal>
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.1 }}
-          className="flex gap-4 flex-wrap justify-center"
-        >
+        <LineReveal delay={2.3} className="flex gap-4 flex-wrap justify-center">
           <Button href="#contact">Get a Quote</Button>
           <Button href="#projects" variant="outline">View Projects</Button>
-        </motion.div>
+        </LineReveal>
       </div>
     </section>
   )
