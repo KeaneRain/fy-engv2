@@ -43,13 +43,16 @@ export default function App() {
   return (
     <SmoothScroll>
       <div className="bg-navy-950 min-h-screen">
-        {/* Fixed skyline canvas — clipped bottom strip on mobile, full spread on desktop */}
+        {/* Fixed skyline canvas — GSAP scales this outer div */}
         <div
           ref={canvasWrapperRef}
-          className="canvas-mobile fixed inset-0 z-0 pointer-events-none"
+          className="fixed inset-0 z-0 pointer-events-none"
           style={{ transformOrigin: 'center bottom' }}
         >
-          <SkylineCanvas preserveAspectRatio={isMobile ? 'xMidYMax meet' : 'xMidYMax slice'} />
+          {/* Clip is on inner div so GSAP scale doesn't expand the clipped area */}
+          <div className="canvas-mobile w-full h-full">
+            <SkylineCanvas preserveAspectRatio={isMobile ? 'xMidYMax meet' : 'xMidYMax slice'} />
+          </div>
         </div>
 
         {/* Radial vignette */}
