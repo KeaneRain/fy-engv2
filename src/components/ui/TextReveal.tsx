@@ -73,7 +73,12 @@ export function WordSlide({
       {words.map((word, i) => (
         <span
           key={i}
-          style={{ display: 'inline-block', overflow: 'hidden', verticalAlign: 'bottom' }}
+          style={{
+            display: 'inline-block',
+            overflow: 'hidden',
+            verticalAlign: 'bottom',
+            marginRight: i < words.length - 1 ? '0.35em' : 0,
+          }}
         >
           <motion.span
             variants={{
@@ -88,7 +93,6 @@ export function WordSlide({
           >
             {word}
           </motion.span>
-          {i < words.length - 1 ? ' ' : ''}
         </span>
       ))}
     </motion.span>
