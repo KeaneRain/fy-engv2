@@ -41,17 +41,14 @@ export default function App() {
           className="fixed inset-0 z-0 pointer-events-none"
           style={{ transformOrigin: 'center bottom' }}
         >
-          <SkylineCanvas />
+          {/* Scale down on mobile so buildings don't dominate the centre */}
+          <div className="w-full h-full scale-[0.55] md:scale-100 origin-bottom">
+            <SkylineCanvas />
+          </div>
         </div>
 
-        {/* Radial vignette — dark center keeps text readable, buildings visible at edges */}
-        <div
-          className="fixed inset-0 z-[1] pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(ellipse 55% 100% at 50% 80%, #0a1628 35%, transparent 100%)',
-          }}
-        />
+        {/* Radial vignette — tighter on mobile, wider on desktop */}
+        <div className="vignette fixed inset-0 z-[1] pointer-events-none" />
 
         {/* Nav sits above canvas and content */}
         <Nav />

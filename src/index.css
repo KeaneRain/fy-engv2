@@ -28,3 +28,13 @@ body {
   text-orientation: mixed;
   transform: rotate(180deg);
 }
+
+/* Responsive vignette — tighter on mobile to hide centre buildings */
+.vignette {
+  background: radial-gradient(ellipse 30% 100% at 50% 80%, #0a1628 55%, transparent 100%);
+}
+@media (min-width: 768px) {
+  .vignette {
+    background: radial-gradient(ellipse 55% 100% at 50% 80%, #0a1628 35%, transparent 100%);
+  }
+}
