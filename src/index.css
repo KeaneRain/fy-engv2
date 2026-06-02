@@ -29,9 +29,9 @@ body {
   transform: rotate(180deg);
 }
 
-/* Responsive vignette — very tight on mobile so only edge slivers show */
+/* Mobile: fade buildings into background from below */
 .vignette {
-  background: radial-gradient(ellipse 25% 100% at 50% 80%, #0a1628 55%, transparent 100%);
+  background: linear-gradient(to top, transparent 0%, #0a1628 25%);
 }
 @media (min-width: 768px) {
   .vignette {

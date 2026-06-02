@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { SmoothScroll } from './components/SmoothScroll'
 import { SkylineCanvas } from './components/SkylineCanvas'
@@ -11,6 +11,14 @@ import { Contact } from './components/sections/Contact'
 
 export default function App() {
   const canvasWrapperRef = useRef<HTMLDivElement>(null)
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)')
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
   useEffect(() => {
     const el = canvasWrapperRef.current
@@ -35,13 +43,13 @@ export default function App() {
   return (
     <SmoothScroll>
       <div className="bg-navy-950 min-h-screen">
-        {/* Fixed skyline canvas — faint on mobile, full on desktop */}
+        {/* Fixed skyline canvas — horizon strip on mobile, full spread on desktop */}
         <div
           ref={canvasWrapperRef}
-          className="fixed inset-0 z-0 pointer-events-none opacity-20 md:opacity-100"
+          className="fixed inset-0 z-0 pointer-events-none"
           style={{ transformOrigin: 'center bottom' }}
         >
-          <SkylineCanvas />
+          <SkylineCanvas preserveAspectRatio={isMobile ? 'xMidYMax meet' : 'xMidYMax slice'} />
         </div>
 
         {/* Radial vignette */}
