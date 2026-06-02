@@ -49,8 +49,8 @@ export default function App() {
         {/* Nav sits above canvas and content */}
         <Nav />
 
-        {/* Centered content column */}
-        <main className="relative z-10 w-full">
+        {/* Centered content column — extra bottom padding on mobile for bottom nav bar */}
+        <main className="relative z-10 w-full pb-28 md:pb-0">
           <Hero />
           <Services />
           <Projects />
