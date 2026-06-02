@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { SmoothScroll } from './components/SmoothScroll'
 import { SkylineCanvas } from './components/SkylineCanvas'
@@ -11,15 +11,6 @@ import { Contact } from './components/sections/Contact'
 
 export default function App() {
   const canvasWrapperRef = useRef<HTMLDivElement>(null)
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768)
-
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 767px)')
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
-  }, [])
-
   useEffect(() => {
     const el = canvasWrapperRef.current
     if (!el) return
