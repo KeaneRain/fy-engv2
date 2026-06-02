@@ -43,10 +43,10 @@ export default function App() {
   return (
     <SmoothScroll>
       <div className="bg-navy-950 min-h-screen">
-        {/* Fixed skyline canvas — horizon strip on mobile, full spread on desktop */}
+        {/* Fixed skyline canvas — clipped bottom strip on mobile, full spread on desktop */}
         <div
           ref={canvasWrapperRef}
-          className="fixed inset-0 z-0 pointer-events-none"
+          className="canvas-mobile fixed inset-0 z-0 pointer-events-none"
           style={{ transformOrigin: 'center bottom' }}
         >
           <SkylineCanvas preserveAspectRatio={isMobile ? 'xMidYMax meet' : 'xMidYMax slice'} />

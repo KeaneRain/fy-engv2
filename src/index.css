@@ -29,9 +29,18 @@ body {
   transform: rotate(180deg);
 }
 
-/* Mobile: fade buildings into background from below */
+/* Mobile: clip canvas to bottom strip only, fade top of that strip */
+.canvas-mobile {
+  clip-path: inset(calc(100% - 100px) 0 0 0);
+}
+@media (min-width: 768px) {
+  .canvas-mobile {
+    clip-path: none;
+  }
+}
+
 .vignette {
-  background: linear-gradient(to top, transparent 0%, #0a1628 25%);
+  background: linear-gradient(to top, transparent 0%, #0a1628 30%);
 }
 @media (min-width: 768px) {
   .vignette {
