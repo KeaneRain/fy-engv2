@@ -31,7 +31,7 @@ body {
 
 /* Responsive vignette — tighter on mobile to hide centre buildings */
 .vignette {
-  background: radial-gradient(ellipse 30% 100% at 50% 80%, #0a1628 55%, transparent 100%);
+  background: radial-gradient(ellipse 40% 100% at 50% 80%, #0a1628 45%, transparent 100%);
 }
 @media (min-width: 768px) {
   .vignette {

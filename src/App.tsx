@@ -42,7 +42,7 @@ export default function App() {
           style={{ transformOrigin: 'center bottom' }}
         >
           {/* Scale down on mobile so buildings don't dominate the centre */}
-          <div className="w-full h-full scale-[0.55] md:scale-100 origin-bottom">
+          <div className="w-full h-full scale-[0.8] md:scale-100 origin-bottom">
             <SkylineCanvas />
           </div>
         </div>
