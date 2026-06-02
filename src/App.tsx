@@ -43,20 +43,17 @@ export default function App() {
   return (
     <SmoothScroll>
       <div className="bg-navy-950 min-h-screen">
-        {/* Fixed skyline canvas — GSAP scales this outer div */}
+        {/* Fixed skyline canvas — desktop only */}
         <div
           ref={canvasWrapperRef}
-          className="fixed inset-0 z-0 pointer-events-none"
+          className="fixed inset-0 z-0 pointer-events-none hidden md:block"
           style={{ transformOrigin: 'center bottom' }}
         >
-          {/* Clip is on inner div so GSAP scale doesn't expand the clipped area */}
-          <div className="canvas-mobile w-full h-full">
-            <SkylineCanvas preserveAspectRatio={isMobile ? 'xMidYMax meet' : 'xMidYMax slice'} />
-          </div>
+          <SkylineCanvas />
         </div>
 
-        {/* Radial vignette */}
-        <div className="vignette fixed inset-0 z-[1] pointer-events-none" />
+        {/* Radial vignette — desktop only */}
+        <div className="vignette fixed inset-0 z-[1] pointer-events-none hidden md:block" />
 
         {/* Nav sits above canvas and content */}
         <Nav />
