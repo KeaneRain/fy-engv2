@@ -35,17 +35,17 @@ export default function App() {
   return (
     <SmoothScroll>
       <div className="bg-navy-950 min-h-screen">
-        {/* Fixed skyline canvas — desktop only */}
+        {/* Fixed skyline canvas — faint on mobile, full on desktop */}
         <div
           ref={canvasWrapperRef}
-          className="fixed inset-0 z-0 pointer-events-none hidden md:block"
+          className="fixed inset-0 z-0 pointer-events-none opacity-20 md:opacity-100"
           style={{ transformOrigin: 'center bottom' }}
         >
           <SkylineCanvas />
         </div>
 
-        {/* Radial vignette — desktop only */}
-        <div className="vignette fixed inset-0 z-[1] pointer-events-none hidden md:block" />
+        {/* Radial vignette */}
+        <div className="vignette fixed inset-0 z-[1] pointer-events-none" />
 
         {/* Nav sits above canvas and content */}
         <Nav />
