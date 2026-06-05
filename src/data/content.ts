@@ -1,3 +1,8 @@
+import modernImg from '../assets/pictures/modern.png'
+import commercialImg from '../assets/pictures/Commercial.jpg'
+import industrialImg from '../assets/pictures/Industrial.jpg'
+import highriseImg from '../assets/pictures/High-rise.jpg'
+
 export const NAV_LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
@@ -28,10 +33,10 @@ export const SERVICES = [
 ]
 
 export const PROJECTS = [
-  { id: 'residence', title: 'Modern Residence', category: 'Residential', image: '/projects/residence.jpg' },
-  { id: 'commercial', title: 'Commercial Building', category: 'Commercial', image: '/projects/commercial.jpg' },
-  { id: 'industrial', title: 'Industrial Facility', category: 'Industrial', image: '/projects/industrial.jpg' },
-  { id: 'highrise', title: 'High-Rise Development', category: 'Mixed Use', image: '/projects/highrise.jpg' },
+  { id: 'residence', title: 'Modern Residence', category: 'Residential', image: modernImg },
+  { id: 'commercial', title: 'Commercial Building', category: 'Commercial', image: commercialImg },
+  { id: 'industrial', title: 'Industrial Facility', category: 'Industrial', image: industrialImg },
+  { id: 'highrise', title: 'High-Rise Development', category: 'Mixed Use', image: highriseImg },
 ]
 
 export const STATS = [
